@@ -1,0 +1,105 @@
+.nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 15px;
+}
+
+.nav h1 {
+    margin: 0;
+    font-size: 44px;
+    padding: 10px;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 30px;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    font-size: 20px;
+}
+
+.nav a:hover {
+    background-color: #3e8e41;
+}
+
+.pet-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 50px;
+}
+
+.pet-info {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    padding: 10px;
+    width: 300px;
+}
+
+.pet-info h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: rgb(63, 63, 63);
+}
+
+.pet-info h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #696969;
+}
+
+.pet-info span {
+    font-size: 14px;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.pet-info button {
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 7%;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 8px 16px;
+    margin: 10px;
+}
+
+.pet-info button:hover {
+    background-color: #3e8e41;
+}
+
+.pet-info button:disabled {
+    background-color: #ffffff;
+    cursor: not-allowed;
+    color: #8d1f19;
+}
+
+.pet-info a {
+    color: #1075e1;
+    text-decoration: none;
+    margin: 15px;
+}
+
+.pet-info a:hover {
+    text-decoration: underline;
+}
+
+.pet-info .like-btn{
+    background-color: #ea3128;
+}
+
+.pet-info .like-btn:hover{
+    background-color: #c45f59;
+}
