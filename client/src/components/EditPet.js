@@ -23,12 +23,7 @@ const EditPet = () => {
     const [errors, setErrors] = useState({})
 
     const changeHandler = (e) => {
-        if (e.target.name === 'explicit') {
-            setPet({ ...pet, explicit: !pet.explicit })
-        }
-        else {
-            setPet({ ...pet, [e.target.name]: e.target.value })
-        }
+        setPet({ ...pet, [e.target.name]: e.target.value })
     }
 
     useEffect(() => {
@@ -55,17 +50,19 @@ const EditPet = () => {
                 console.log(err)
                 setErrors(err.response.data.errors)
             })
+
+            
     }
 
     return (
         <div>
             <div className='nav'>
                 <h1>Pet Shelter</h1>
-                <Link to={'/'}>Home</Link>
+                <Link to={'/'}>back to Home</Link>
             </div>
             {/* Below Nav */}
             <div>
-                <h2>Edit Pet</h2>
+                <h2>Edit {pet.petName}</h2>
 
                 <form onSubmit={submitHandler}>
 
@@ -100,18 +97,9 @@ const EditPet = () => {
                             <p>{errors.skills.message}</p> :
                             null
                     }
-
-                    <label>Explicit?</label>
-                    <input type="checkbox" name="explicit" onChange={changeHandler} checked={pet.explicit} />
-                    {
-                        errors.explicit ?
-                            <p>{errors.explicit.message}</p> :
-                            null
-                    }
-
                     <br />
 
-                    <button className='List-btn'>Update Details</button>
+                    <button className='List-btn'>Edit Pet</button>
                 </form>
 
             </div>

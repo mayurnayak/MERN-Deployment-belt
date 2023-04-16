@@ -40,3 +40,27 @@
     font-weight: bold;
     margin-right: 5px;
 }
+
+
+.pet-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(255, 252, 252);
+    color: rgb(27, 26, 26);
+    padding: 15px;
+    margin: 10px;
+}
+
+.pet-nav button {
+    background-color: #c71c1c;
+    border: none;
+    border-radius: 5%;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 10px;
+    padding: 8px 16px;
+    margin: 10px;
+}
+

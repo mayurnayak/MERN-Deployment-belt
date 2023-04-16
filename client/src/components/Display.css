@@ -96,10 +96,38 @@
     text-decoration: underline;
 }
 
-.pet-info .like-btn{
+.pet-info .like-btn {
     background-color: #ea3128;
 }
 
-.pet-info .like-btn:hover{
+.pet-info .like-btn:hover {
     background-color: #c45f59;
+}
+
+thead {
+    background-color: #333;
+    color: #fff;
+}
+
+th {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th:first-child {
+    border-top-left-radius: 5px;
+}
+
+th:last-child {
+    border-top-right-radius: 5px;
+}
+
+th:not(:last-child) {
+    border-right: 1px solid #ddd;
+}
+
+
+.listing{
+    margin: 50px;
 }

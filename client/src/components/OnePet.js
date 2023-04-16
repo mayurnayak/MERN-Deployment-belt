@@ -3,7 +3,7 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './OnePet.css'
 
 const OnePet = () => {
@@ -33,27 +33,24 @@ const OnePet = () => {
                 console.log(err)
             })
     }
-    
+
     return (
         <div>
             <div className='nav'>
                 <h1>Pet Shelter</h1>
-                <Link to={'/'}>Home</Link>
+                <Link to={'/'}>back to Home</Link>
             </div>
-      {/* Below Nav */}
+            {/* Below Nav */}
+            <div className='pet-nav'>
+                <h2>Details about:  {onePet.petName}</h2>
+                <button onClick={() => deleteHandler(onePet._id)}>Adopt {onePet.petName}</button>
+            </div>
             <div className='onePet'>
                 <h2>Pet Name: {onePet.petName}</h2>
                 <h3>Pet Type: {onePet.petType}</h3>
                 <h3>Description: {onePet.description}</h3>
                 <h3>Skiils: {onePet.skills}</h3>
-                <span>Explicit? {onePet.explicit} </span>
-                            {
-                                onePet.explicit ?
-                                    <span>Yes</span> :
-                                    <span>No </span>
-                            }
-                <br/>
-                <button onClick={() => deleteHandler(onePet._id)}>Adopt Pet</button>
+                <br />
             </div>
         </div>
     );

@@ -47,48 +47,47 @@ const Display = (props) => {
         setAllPets(updatedPets)
     }
 
-        return (
-            <div>
-                <div className='nav'>
-                    <h1>Pet Shelter</h1>
-                    <Link to={'/createPet/form'}>Add your Pet</Link>
-                </div>
-            {/* Below Nav */}
-            <div className="pet-container">
-                {
-                    allPets.map((pet) => (
-                        <div className='pet-info' key={pet._id}>
-                            <h2>Pet Name: {pet.petName}</h2>
-                            <h3>Pet Type: {pet.petType}</h3>
-                            <h3>Pet Description: {pet.description}</h3>
-                            <h3>Skille: {pet.skills}</h3>
-                            <span>Explicit? </span>
-                            {
-                                pet.explicit ?
-                                    <span>Yes</span> :
-                                    <span>No </span>
-                            }
-                            <br />
-                            
-                            <Link to={`/onePet/${pet._id}`}>Pet Details</Link>
-                            <Link to={`/editPet/${pet._id}`}>Edit</Link>
-                            <br />
-                            <button onClick={() => deleteHandler(pet._id)}>Adopt</button>
-
-                 {/* Black Belt feature */}
-                            <button className='like-btn'
-                                onClick={() => likeHandler(pet._id)}
-                                disabled={pet.isLiked}>
-                                {pet.isLiked ? "Liked! ❤️" : "Like"}
-                            </button>
-
-                        </div>
-
-                    ))
-                }
-                </div>
+    return (
+        <div>
+            <div className='nav'>
+                <h1>Pet Shelter</h1>
+                <Link to={'/createPet/form'}>Add a pet to the shelter</Link>
             </div>
-        );
-    }
+            {/* Below Nav */}
 
-    export default Display;
+            <h2 className='listing'>These pets are looking for a good home</h2>
+            <div className="pet-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {allPets.map((pet) => (
+                            <tr className='pet-info' key={pet._id}>
+                                <td>{pet.petName}</td>
+                                <td>{pet.petType}</td>
+                                <td>
+                                    <Link to={`/onePet/${pet._id}`}>Details</Link>
+                                    <Link to={`/editPet/${pet._id}`}>Edit</Link>
+                                    <button onClick={() => deleteHandler(pet._id)}>Adopt</button>
+                            {/* Black Belt feature */}
+                                    <button className='like-btn'
+                                        onClick={() => likeHandler(pet._id)}
+                                        disabled={pet.isLiked}>
+                                        {pet.isLiked ? "Liked! ❤️" : "Like"}
+                                    </button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    );
+}
+
+export default Display;

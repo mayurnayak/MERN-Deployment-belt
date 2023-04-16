@@ -22,10 +22,6 @@ const PetShelterSchema = new mongoose.Schema({
         type: Number,
         min:[0, 'chose 0 if your dog dont have skills'],
         max:[3, 'your DOG is too skilled to be in this Pet Shelter, max 3 skiils!']
-    },
-    explicit:{
-        type:Boolean,
-        required:[true, 'you gotta fill this out']
     }
 }, {timestamps:true});
 

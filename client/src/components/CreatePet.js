@@ -20,12 +20,7 @@ const CreatePet = () => {
     const [errors, setErrors] = useState({})
 
     const changeHandler = (e) => {
-        if (e.target.name === 'explicit') {
-            setPet({ ...pet, explicit: !pet.explicit })
-        }
-        else {
-            setPet({ ...pet, [e.target.name]: e.target.value })
-        }
+        setPet({ ...pet, [e.target.name]: e.target.value })
     }
 
     const submitHandler = (e) => {
@@ -69,7 +64,7 @@ const CreatePet = () => {
         <div>
             <div className='nav'>
                 <h1>Pet Shelter</h1>
-                <Link to={'/'}>Home</Link>
+                <Link to={'/'}>back to Home</Link>
             </div>
       {/* Below Nav */}
             <div>
@@ -107,17 +102,9 @@ const CreatePet = () => {
                             null
                     }
 
-                    <label>Explicit?</label>
-                    <input type="checkbox" name="explicit" onChange={changeHandler} value={pet.explicit} />
-                    {
-                        errors.explicit ?
-                            <p>{errors.explicit.message}</p> :
-                            null
-                    }
-
                     <br />
 
-                    <button className='List-btn'>List Pet</button>
+                    <button className='List-btn'>Add Pet</button>
                 </form>
             </div>
 
