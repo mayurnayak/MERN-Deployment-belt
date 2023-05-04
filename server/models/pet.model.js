@@ -25,6 +25,6 @@ const PetShelterSchema = new mongoose.Schema({
     }
 }, {timestamps:true});
 
-const PetShelter = mongoose.model('Shelter', PetShelterSchema);
+const PetShelter = mongoose.model('PetShelter', PetShelterSchema);
 
 module.exports = PetShelter;
